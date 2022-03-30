@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(){
         path: [ { y: 0 }, { y: armSize } ],
         translate: { y: armSize },
         rotate: { x: TAU/8 },
-        color: '#EA0',
+        color: '#FC9',
         stroke: 4,
     });
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // scootch toward front a bit
         translate: { y: armSize, z: 1 },
         stroke: 4.5,
-        color: '#EA0',
+        color: '#FC9',
     });
 
 
@@ -116,8 +116,8 @@ document.addEventListener("DOMContentLoaded", function(){
         // position above chest
         translate: { y: -9.5 },
         rotate: { y: TAU/-1.1 },
-        color: '#EA0',
-        backface: '#C25'
+        color: '#FC9',
+        backface: '#412'
     });
 
     let bang = new Zdog.Ellipse({
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(){
         diameter: 10,
         quarters: 2,
         stroke: 1,
-        color: '#C25',
+        color: '#412',
         fill: true,
         backface: true,
         translate: { z: 5, y: -3 },
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // disable stroke for crisp edge
         stroke: false,
         backface: true,
-        color: '#C25',
+        color: '#412',
         rotate: { z: TAU/-4, x: TAU/2,},
       });
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function(){
         cornerRadius: 30,
         rotate: { z: TAU/-4, x: TAU/3},
         translate: { z: -7, y: 1 },
-        color: '#C25',
+        color: '#412',
         fill: true
       });
 
@@ -191,14 +191,264 @@ document.addEventListener("DOMContentLoaded", function(){
         translate: { y: 1.5, z: 4.5 },
         rotate: { z: TAU/4 },
         closed: true,
-        color: '#FED',
+        color: '#fff',
         stroke: 0.5,
         fill: true,
         backface: false,
     });
     // -- smile --- //
 
-    
+    let mydog = new Zdog.Anchor({
+        addTo: illo,
+    });
+
+    let dogbody = new Zdog.Shape({
+        addTo: mydog,
+        color: '#fff',
+        stroke: 8,
+        translate: {
+            x: -9,
+            y: 8,
+            z: -7
+        },
+        rotate: {
+            y: TAU/4
+        },
+    });
+
+
+    let doglegs = new Zdog.Group({
+        addTo: dogbody,
+        // rotate: { x: TAU/8 },
+    });
+
+
+    let dogleg = new Zdog.Shape({
+        addTo: doglegs,
+        path: [
+          { z:1.5, x: 3, y:1 }, // start at 1st point
+          { z:1.5, x: 3 , y:7}, // line to 2nd point
+        ],
+        stroke: 2,
+        color: '#fff',
+        rotate: {
+            z: TAU/-20
+        },
+      });
+
+    let dogfoot = new Zdog.RoundedRect({
+        addTo: doglegs,
+        width: 2,
+        height: 1,
+        cornerRadius: 3,
+        stroke: 2,
+        color: '#fff',
+        translate: {
+            x: 6,
+            y: 7,
+            z: 1.5
+        },
+        rotate: {
+            x: TAU/4
+        },
+        
+    });
+
+    dogleg.copy({
+        translate: {
+            z: -3,
+            y: -2
+        },
+        rotate: {
+            z: TAU/20
+        },
+        color:"#fff"
+    })
+
+    dogleg.copy({
+        translate: {
+            x: -9,
+            y: -1
+        },
+        rotate: {
+            z: TAU/20
+        },
+        color:"#fff"
+    })
+
+    dogleg.copy({
+        translate: {
+            x: -10,
+            z: -3,
+            y: 0
+        },
+        rotate: {
+            z: TAU/-20
+        },
+        
+    })
+
+
+    dogfoot.copy({
+        translate: {
+            x: 1.5,
+            y: 7,
+            z: -1.5
+        },
+        color:"#fff"
+    });
+
+    dogfoot.copy({
+        translate: {
+            x: -4,
+            y: 7,
+            z: -1.5
+        },
+        color:"#fff"
+    });
+
+    dogfoot.copy({
+        translate: {
+            x: -7.5,
+            y: 7,
+            z: 1.5
+        },
+        rotate: {
+            z: TAU/20
+        },
+        color:"#fff"
+    });
+
+
+    let dogbody2 = new Zdog.Shape({
+        addTo: mydog,
+        color: '#fff',
+        stroke: 8,
+        translate: {
+            x: -9,
+            y: 8,
+            z: -12
+        },
+        rotate: {
+            y: TAU/4
+        },
+    });
+
+    let dogHead = new Zdog.Shape({
+        addTo: mydog,
+        color: '#fff',
+        stroke: 7,
+        translate: {
+            x: -9,
+            y: 2,
+            z: -4
+        },
+        rotate: {
+            y: TAU/1
+        },
+    });
+
+    let dogEye = new Zdog.Hemisphere({
+        addTo: dogHead,
+        diameter: 1,
+        // fill enabled by default
+        // disable stroke for crisp edge
+        stroke: false,
+        color: '#333',
+        backface: '#333',
+        translate: { x:1.5 ,y:-1 ,z: 3 }, 
+    });
+
+    dogEye.copy({
+        translate: { x:-1.5 ,y:-1 ,z: 3 }, 
+    });
+
+    //tail
+    new Zdog.Shape({
+        addTo: mydog,
+        path: [
+          { x: -9, y: 6, z: -15 },   // start
+           { bezier: [
+            { x: -9, y: 4, z: -16 }, // start control point
+            { x: -9, y: 1, z: -13 }, // end control point
+            { x: -9, y: 1, z: -12 }, // end point
+           ]},
+        ],
+        closed: false,
+        stroke: 2,
+        color: '#fff'
+    });
+
+    //ear
+    let dogear = new Zdog.Shape({
+        addTo: mydog,
+        path: [
+          { x:   -12, y: 0 , z:-3},
+          { x:  -11.5,y:  -2.5 , z:-3},
+          { x: -10, y:  0 , z:-3},
+        ],
+        closed: false, // unclosed
+        stroke: 1,
+        color: '#fff',
+        fill: true
+    });
+
+    dogear.copy({
+        translate: { x: 4, y: 0, z: 0 },  
+        path: [
+            { x:   -12, y: 0 , z:-3},
+            { x:  -10.5,y:  -2.5 , z:-3},
+            { x: -10, y:  0 , z:-3},
+          ],   
+    });
+
+    let mouse = new Zdog.Cylinder({
+        addTo: dogHead,
+        diameter: 4,
+        length: 5,
+        stroke: false,
+        color: '#fff',
+        backface: '#fff',
+        translate: { x: 0, y: 1.3, z: 1 }, 
+      });
+
+
+    let mouseEnd = new Zdog.Hemisphere({
+        addTo: mouse,
+        diameter: 4,
+        // fill enabled by default
+        // disable stroke for crisp edge
+        stroke: false,
+        color: '#fff',
+        backface: '#fff',
+        translate: { z: 2 }, 
+    });
+
+    // let tongue = new Zdog.Ellipse({
+    //     addTo: mouseEnd,
+    //     diameter: 1,
+    //     quarters: 2,
+    //     width: 3,
+    //     stroke: .5,
+    //     color: '#C25',
+    //     fill:true,
+    //     translate: { z: 1.8, y: .3 } ,
+    //     rotate: {
+    //         z: TAU/4
+    //     },
+    //   });
+
+    let nose = new Zdog.Hemisphere({
+        addTo: mouseEnd,
+        diameter: 1,
+        // fill enabled by default
+        // disable stroke for crisp edge
+        stroke: false,
+        color: '#333',
+        backface: '#333',
+        translate: { y:-1 ,z: 1.5 }, 
+        
+    });
     
     
 
