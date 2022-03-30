@@ -2,7 +2,7 @@
   "name": "z-dog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "zDog.html",
   "scripts": {
     "dev": "parcel zDog.html"
   },
