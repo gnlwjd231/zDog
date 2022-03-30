@@ -2,9 +2,9 @@
   "name": "z-dog",
   "version": "1.0.0",
   "description": "",
-  "main": "zDog.html",
+  "main": "index.html",
   "scripts": {
-    "dev": "parcel zDog.html"
+    "dev": "parcel index.html"
   },
   "author": "",
   "license": "ISC",
