@@ -200,6 +200,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let mydog = new Zdog.Anchor({
         addTo: illo,
+        translate: {
+            x: -4,
+            y: -5,
+            z: 0
+        },
     });
 
     let dogbody = new Zdog.Shape({

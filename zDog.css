@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background:#09D;
+    overflow: hidden;
+}
+div.canvas-container{
+   background:#09D;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   height: 100vh;
+}
+
+div.canvas-container h1{
+    font-family: 'SBAggroB';
+    color: #fff;
+    cursor: pointer;
+}
+
+div.canvas-container h1:hover{
+    color:black;
+}
