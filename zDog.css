@@ -1,13 +1,12 @@
-@font-face {
-    font-family: 'SBAggroB';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
+*{
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
 body{
-    background:#bababa;
+    background:#e0ddd0;
     overflow: hidden;
+    position: relative;
 }
 div.canvas-container{
    background:#e0ddd0;
@@ -26,4 +25,55 @@ div.canvas-container h1{
 
 div.canvas-container h1:hover{
     color:black;
+}
+
+div.picture-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.picture-container .wrapper{
+    width: 1200px;
+    height: 600px;
+    position: relative;
+}
+
+div.picture-container .wrapper .picture-wrapper{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+div.picture-container .wrapper .picture{
+    display: none;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+div.picture-container .wrapper .picture img{
+    /* object-fit: cover; */
+    margin-top: -65px;
+}
+
+
+div.picture-container .wrapper button{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    bottom: 150px;
+    right: calc(50% - 50px);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    background: #FC9;
+    color: #fff;
 }
