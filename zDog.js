@@ -582,20 +582,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     let myFont = new Zdog.Font({
-        src: './font/Pretendard-Medium.ttf'
+        src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf'
     });
     
     var text = new Zdog.TextGroup({
         addTo: illo,
         font: myFont,
         value: [
-            '안녕하세요',
-            '프론트엔드 개발자',
-            '박휘정입니다.'
+            'FE Developer',
+            'Heizel Park',
         ],
         textAlign: 'center',
         color: '#fff',
-        stroke: .3,
+        stroke: .1,
         fontSize: 8,
         textAlign: 'left',
         translate: { x: 19 , z: 8,y: -5 },
