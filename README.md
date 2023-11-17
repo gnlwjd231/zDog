@@ -1,3 +1,6 @@
+![image](https://github.com/gnlwjd231/zDog/assets/69576473/103845b3-6656-4555-8272-beb71cefe109)
+
+
 사용 기술
 HTML/CSS/Jquery/Z-dog
 
