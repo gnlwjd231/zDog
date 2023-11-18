@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const illo = new Zdog.Illustration({
         element: '.zdog-canvas',
         zoom: 4,
-        dragRotate: true,
         rotate: sceneStartRotation,
+        dragRotate: true,
         // stop spinning when drag starts
         onDragStart: function() {
             isSpinning = false;
